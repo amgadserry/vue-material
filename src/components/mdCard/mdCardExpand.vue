@@ -6,15 +6,22 @@
 
 <script>
   export default {
+    data() {
+      return {
+        observer: null
+      };
+    },
     methods: {
       setContentMargin() {
         this.content.style.marginTop = -this.content.offsetHeight + 'px';
       },
       toggle() {
-        this.setContentMargin();
         this.$refs.expand.classList.toggle('md-active');
       },
       onWindowResize() {
+        window.requestAnimationFrame(this.setContentMargin);
+      },
+      onContentChanged() {
         window.requestAnimationFrame(this.setContentMargin);
       }
     },
@@ -28,6 +35,9 @@
 
           this.trigger.addEventListener('click', this.toggle);
           window.addEventListener('resize', this.onWindowResize);
+  
+          this.observer = new MutationObserver(this.onContentChanged);
+          this.observer.observe(this.content, {childList: true});
         }
       }, 200);
     },
@@ -35,6 +45,7 @@
       if (this.content) {
         this.trigger.removeEventListener('click', this.toggle);
         window.removeEventListener('resize', this.onWindowResize);
+        this.observer.disconnect();
       }
     }
   };

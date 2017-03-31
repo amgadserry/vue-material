@@ -284,15 +284,23 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
+  data: function data() {
+    return {
+      observer: null
+    };
+  },
+
   methods: {
     setContentMargin: function setContentMargin() {
       this.content.style.marginTop = -this.content.offsetHeight + 'px';
     },
     toggle: function toggle() {
-      this.setContentMargin();
       this.$refs.expand.classList.toggle('md-active');
     },
     onWindowResize: function onWindowResize() {
+      window.requestAnimationFrame(this.setContentMargin);
+    },
+    onContentChanged: function onContentChanged() {
       window.requestAnimationFrame(this.setContentMargin);
     }
   },
@@ -308,6 +316,9 @@ exports.default = {
 
         _this.trigger.addEventListener('click', _this.toggle);
         window.addEventListener('resize', _this.onWindowResize);
+
+        _this.observer = new MutationObserver(_this.onContentChanged);
+        _this.observer.observe(_this.content, { childList: true });
       }
     }), 200);
   },
@@ -315,6 +326,7 @@ exports.default = {
     if (this.content) {
       this.trigger.removeEventListener('click', this.toggle);
       window.removeEventListener('resize', this.onWindowResize);
+      this.observer.disconnect();
     }
   }
 };

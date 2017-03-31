@@ -760,7 +760,7 @@
               <md-card-expand>
                 <md-card-actions>
                   <md-button>Action</md-button>
-                  <md-button>Action</md-button>
+                  <md-button @click.native="amount++">add more content</md-button>
                   <span style="flex: 1"></span>
                   <md-button class="md-icon-button" md-expand-trigger>
                     <md-icon>keyboard_arrow_down</md-icon>
@@ -768,7 +768,7 @@
                 </md-card-actions>
 
                 <md-card-content>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
+                  <p v-for="idx in amount"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi. </p>
                 </md-card-content>
               </md-card-expand>
             </md-card>
@@ -1097,6 +1097,16 @@
     </docs-component>
   </page-content>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        amount: 0
+      };
+    }
+  };
+</script>
 
 <style lang="sass" scoped>
   .card-holder {
