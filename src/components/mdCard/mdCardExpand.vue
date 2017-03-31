@@ -11,6 +11,7 @@
         this.content.style.marginTop = -this.content.offsetHeight + 'px';
       },
       toggle() {
+        this.setContentMargin();
         this.$refs.expand.classList.toggle('md-active');
       },
       onWindowResize() {

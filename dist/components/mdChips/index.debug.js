@@ -11,41 +11,41 @@
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.l = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
-
+/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -56,7 +56,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 			});
 /******/ 		}
 /******/ 	};
-
+/******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
@@ -65,13 +65,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		__webpack_require__.d(getter, 'a', getter);
 /******/ 		return getter;
 /******/ 	};
-
+/******/
 /******/ 	// Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 404);
 /******/ })
@@ -194,7 +194,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 144:
+/***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -244,7 +244,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 145:
+/***/ 126:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -258,7 +258,7 @@ var _mixin = __webpack_require__(1);
 
 var _mixin2 = _interopRequireDefault(_mixin);
 
-var _uniqueId = __webpack_require__(48);
+var _uniqueId = __webpack_require__(40);
 
 var _uniqueId2 = _interopRequireDefault(_uniqueId);
 
@@ -398,7 +398,7 @@ module.exports = ".THEME_NAME.md-chip {\n  background-color: BACKGROUND-CONTRAST
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(144),
+  __webpack_require__(125),
   /* template */
   __webpack_require__(352),
   /* scopeId */
@@ -406,7 +406,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/mrufino/Projects/personal/github/vue-material/src/components/mdChips/mdChip.vue"
+Component.options.__file = "/home/amgadserry/cairomunch-work/vue-material/src/components/mdChips/mdChip.vue"
 if (Component.esModule && Object.keys(Component.esModule).some((function (key) {return key !== "default" && key !== "__esModule"}))) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] mdChip.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -437,7 +437,7 @@ __webpack_require__(219)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(145),
+  __webpack_require__(126),
   /* template */
   __webpack_require__(369),
   /* scopeId */
@@ -445,7 +445,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/mrufino/Projects/personal/github/vue-material/src/components/mdChips/mdChips.vue"
+Component.options.__file = "/home/amgadserry/cairomunch-work/vue-material/src/components/mdChips/mdChips.vue"
 if (Component.esModule && Object.keys(Component.esModule).some((function (key) {return key !== "default" && key !== "__esModule"}))) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] mdChips.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -487,7 +487,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         !_vm.disabled && _vm.$emit('delete')
       },
       "keyup": function($event) {
-        if (_vm._k($event.keyCode, "delete", [8, 46])) { return; }
+        if (!('button' in $event) && _vm._k($event.keyCode, "delete", [8, 46])) { return null; }
         !_vm.disabled && _vm.$emit('delete')
       }
     }
@@ -538,11 +538,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       rawName: "v-show",
       value: (!_vm.mdStatic),
       expression: "!mdStatic"
-    }, {
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.currentChip),
-      expression: "currentChip"
     }],
     ref: "input",
     attrs: {
@@ -553,27 +548,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "disabled": _vm.disabled,
       "tabindex": "0"
     },
-    domProps: {
-      "value": (_vm.currentChip)
-    },
-    on: {
-      "input": function($event) {
-        _vm.currentChip = $event
-      }
-    },
     nativeOn: {
       "keydown": [function($event) {
-        if (_vm._k($event.keyCode, "delete", [8, 46])) { return; }
+        if (!('button' in $event) && _vm._k($event.keyCode, "delete", [8, 46])) { return null; }
         _vm.deleteLastChip($event)
       }, function($event) {
-        if (_vm._k($event.keyCode, "enter", 13)) { return; }
+        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
         $event.preventDefault();
         _vm.addChip($event)
       }, function($event) {
-        if ($event.keyCode !== 186) { return; }
+        if (!('button' in $event) && $event.keyCode !== 186) { return null; }
         $event.preventDefault();
         _vm.addChip($event)
       }]
+    },
+    model: {
+      value: (_vm.currentChip),
+      callback: function($$v) {
+        _vm.currentChip = $$v
+      },
+      expression: "currentChip"
     }
   })], 2)], 1)
 },staticRenderFns: []}
@@ -587,15 +581,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 404:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(97);
-
-
-/***/ }),
-
-/***/ 48:
+/***/ 40:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -613,7 +599,15 @@ module.exports = exports["default"];
 
 /***/ }),
 
-/***/ 97:
+/***/ 404:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(78);
+
+
+/***/ }),
+
+/***/ 78:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
