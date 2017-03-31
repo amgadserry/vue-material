@@ -4091,7 +4091,7 @@ exports.default = {
     var _this = this;
 
     window.setTimeout((function () {
-      _this.trigger = _this.$el.querySelector('[md-expand-trigger]');
+      _this.trigger = _this.$el.querySelector('[md-expand-trigger]')[0];
       _this.content = _this.$el.querySelector('.md-card-content');
 
       if (_this.content) {

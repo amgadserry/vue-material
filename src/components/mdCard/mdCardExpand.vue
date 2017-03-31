@@ -27,7 +27,7 @@
     },
     mounted() {
       window.setTimeout(() => {
-        this.trigger = this.$el.querySelector('[md-expand-trigger]');
+        this.trigger = this.$el.querySelector('[md-expand-trigger]')[0];
         this.content = this.$el.querySelector('.md-card-content');
 
         if (this.content) {
