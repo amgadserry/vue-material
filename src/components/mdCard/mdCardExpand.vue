@@ -27,11 +27,16 @@
     },
     mounted() {
       window.setTimeout(() => {
-        this.trigger = this.$el.querySelectorAll('[md-expand-trigger]').find((el) => {
-          return el.closest('.md-md-card-expand') === this.$el;
-        });
+        let triggers = this.$el.querySelectorAll('[md-expand-trigger]');
+  
+        for (var index = 0; index < triggers.length; index++) {
+          let el = triggers[index];
+  
+          if (el.closest('.md-md-card-expand') === this.$el) {
+            this.trigger = el;
+          }
+        }
         this.content = this.$el.querySelector('.md-card-content');
-
         if (this.content) {
           this.setContentMargin();
 
