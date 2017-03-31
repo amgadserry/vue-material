@@ -32,7 +32,7 @@
         for (var index = 0; index < triggers.length; index++) {
           let el = triggers[index];
   
-          if (el.closest('.md-md-card-expand') === this.$el) {
+          if (el.closest('.md-card-expand') === this.$el) {
             this.trigger = el;
           }
         }

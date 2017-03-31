@@ -309,9 +309,11 @@ exports.default = {
 
     window.setTimeout((function () {
       var triggers = _this.$el.querySelectorAll('[md-expand-trigger]');
+
       for (var index = 0; index < triggers.length; index++) {
         var el = triggers[index];
-        if (el.closest('.md-md-card-expand') === _this.$el) {
+
+        if (el.closest('.md-card-expand') === _this.$el) {
           _this.trigger = el;
         }
       }
