@@ -16,7 +16,7 @@
         this.content.style.marginTop = -this.content.offsetHeight + 'px';
       },
       toggle() {
-        if (this.refs.expand.classList.contains('md-active')) {
+        if (this.$refs.expand.classList.contains('md-active')) {
           window.requestAnimationFrame(this.setContentMargin);
         }
         this.$refs.expand.classList.toggle('md-active');
