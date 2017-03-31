@@ -282,7 +282,7 @@ $card-radius: 2px;
         transform: rotateZ(180deg) translate3D(0, 0, 0);
       }
 
-      .md-card-content {
+      >.md-card-content {
         margin-top: 0 !important;
         opacity: 1;
       }

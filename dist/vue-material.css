@@ -896,7 +896,7 @@ button:focus {
 .md-card .md-card-expand.md-active [md-expand-trigger] {
       transform: rotateZ(180deg) translate3D(0, 0, 0);
 }
-.md-card .md-card-expand.md-active .md-card-content {
+.md-card .md-card-expand.md-active > .md-card-content {
       margin-top: 0 !important;
       opacity: 1;
 }
