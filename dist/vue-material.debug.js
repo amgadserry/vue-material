@@ -4091,7 +4091,9 @@ exports.default = {
     var _this = this;
 
     window.setTimeout((function () {
-      _this.trigger = _this.$el.querySelector('[md-expand-trigger]')[0];
+      _this.trigger = _this.$el.querySelector('[md-expand-trigger]').find((function (el) {
+        return el.closest('.md-md-card-expand') === _this.$el;
+      }));
       _this.content = _this.$el.querySelector('.md-card-content');
 
       if (_this.content) {

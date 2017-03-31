@@ -27,7 +27,9 @@
     },
     mounted() {
       window.setTimeout(() => {
-        this.trigger = this.$el.querySelector('[md-expand-trigger]')[0];
+        this.trigger = this.$el.querySelector('[md-expand-trigger]').find((el) => {
+          return el.closest('.md-md-card-expand') === this.$el;
+        });
         this.content = this.$el.querySelector('.md-card-content');
 
         if (this.content) {
